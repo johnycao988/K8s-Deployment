@@ -8,7 +8,6 @@ spec:
   ports:
   - port: 8008
     targetPort: 8008
-    nodePort: 30008
   selector:
     app: nginx 
 
@@ -38,3 +37,4 @@ spec:
         name: nginx
         ports:
         - containerPort: 8008
+          hostPort: 8008      
