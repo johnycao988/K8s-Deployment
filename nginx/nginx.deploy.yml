@@ -4,7 +4,7 @@ metadata:
   name: nginx
   namespace: server 
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 8008
     targetPort: 8008
