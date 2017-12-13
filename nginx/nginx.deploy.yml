@@ -38,4 +38,3 @@ spec:
         name: nginx
         ports:
         - containerPort: 8008
-          hostPort: 8008
