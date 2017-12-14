@@ -12,7 +12,12 @@ spec:
       image: 10.39.101.226:5000/nginx
       ports:
         - containerPort: 8008
-          hostPort: 8008          
+          name: p8008
+          hostPort: 8008     
+        - containerPort: 5601
+          name: p5601
+          hostPort: 5601          
+               
       volumeMounts:
         - mountPath: /etc/nginx/nginx.conf
           name: nginx-conf
