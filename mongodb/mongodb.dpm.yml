@@ -34,7 +34,7 @@ spec:
       containers:
       - image: 10.39.101.226:5000/mongo
         name: mongodb
-        args: ["auth"]
+        args: ["--auth"]
         ports:
         - containerPort: 27017 
         volumeMounts:
