@@ -6,8 +6,10 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 5601
-    targetPort: 5601
+  - port: 9200
+    targetPort: 9200
+  - port: 9300
+    targetPort: 9300    
   selector:
     app: elasticsearch
 
@@ -35,7 +37,8 @@ spec:
       - image: 10.39.101.226:5000/elasticsearch
         name: elasticsearch       
         ports:
-        - containerPort: 5106 
+        - containerPort: 9200 
+        - containerPort: 9300 
         volumeMounts:
         - mountPath: /usr/share/elasticsearch/data
           name: els-data
