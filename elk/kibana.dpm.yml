@@ -34,6 +34,9 @@ spec:
       hostNetwork: false
       containers:
       - image: 10.39.101.226:5000/kibana
+        env:
+          - name: ELASTICSEARCH_URL
+            value: http://elasticsearch:9200
         name: kibana       
         ports:
         - containerPort: 5601            
