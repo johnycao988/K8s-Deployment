@@ -20,7 +20,7 @@ spec:
   - host: traefik.ui.local
     http:
       paths:
-        - path: /ui      
+        - path: 
           backend:
             serviceName: traefik-web-ui
             servicePort: 80
