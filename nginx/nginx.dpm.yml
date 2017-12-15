@@ -11,15 +11,18 @@ spec:
     - name: nginx
       image: 10.39.101.226:5000/nginx
       ports:
-        - containerPort: 8008
-          name: p8008
-          hostPort: 8008     
+        - containerPort: 3000
+          name: p3000
+          hostPort: 3000     
+          
         - containerPort: 5601
           name: p5601
-          hostPort: 5601     
+          hostPort: 5601
+               
         - containerPort: 9200
           name: p9200
-          hostPort: 9200                  
+          hostPort: 9200
+                            
         - containerPort: 9300
           name: p9300
           hostPort: 9300                  
