@@ -16,7 +16,14 @@ spec:
           hostPort: 8008     
         - containerPort: 5601
           name: p5601
-          hostPort: 5601          
+          hostPort: 5601     
+        - containerPort: 9200
+          name: p9200
+          hostPort: 9200                  
+        - containerPort: 9300
+          name: p9300
+          hostPort: 9300                  
+
                
       volumeMounts:
         - mountPath: /etc/nginx/nginx.conf
