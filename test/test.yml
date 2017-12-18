@@ -76,3 +76,27 @@ spec:
         name: test2
         ports:
         - containerPort: 3000 
+
+---
+# Ingress 文件如下
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: test-ingress
+  namespace: test
+spec:
+  rules:
+  - host: test1.test.local
+    http:
+      paths:
+        - backend:
+            serviceName: "test1"
+            servicePort: 3000
+
+  - host: test2.test.local
+    http:
+      paths:
+        - backend:
+            serviceName: "test2"
+            servicePort: 3000
+                    
