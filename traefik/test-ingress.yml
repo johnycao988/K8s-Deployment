@@ -2,7 +2,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: traefik-ingress
+  name: test-ingress
   namespace: test
 spec:
   rules:
