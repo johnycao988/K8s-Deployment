@@ -182,6 +182,6 @@ spec:
     http:
       paths:
         - backend:
-          serviceName: kubernetes-dashboard
-          servicePort: 443
+            serviceName: kubernetes-dashboard
+            servicePort: 443
      
