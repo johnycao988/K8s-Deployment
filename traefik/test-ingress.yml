@@ -17,4 +17,3 @@ spec:
           backend:
             serviceName: "test2"
             servicePort: 3000          
- 
