@@ -17,3 +17,11 @@ spec:
           backend:
             serviceName: "test2"
             servicePort: 3000          
+
+  - host: test1.test.local
+    http:
+      paths:
+        - backend:
+            serviceName: "test1"
+            servicePort: 3000
+            
