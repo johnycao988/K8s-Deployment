@@ -49,21 +49,26 @@ spec:
           configMap:
             name: traefik-conf
       containers:
-      - image: traefik
-        name: traefik-ingress-lb
-        resources:
-          limits:
-            cpu: 200m
-            memory: 30Mi
-          requests:
-            cpu: 100m
-            memory: 20Mi
-        ports:
-        - containerPort: 80 
-        - containerPort: 8080
-        - containerPort: 443
-        args:
-        - --web.address=:8080
-        - --web
-        - --kubernetes
-        - --configfile=/config/traefik.toml
+        - image: traefik
+          name: traefik-ingress-lb
+          volumeMounts:
+            - mountPath: "/ssl"
+              name: "ssl"
+            - mountPath: "/config"
+              name: "config"
+          resources:
+            limits:
+              cpu: 200m
+              memory: 30Mi
+            requests:
+              cpu: 100m
+              memory: 20Mi
+          ports:
+            - containerPort: 80 
+            - containerPort: 8080
+            - containerPort: 443
+          args:
+            - --web.address=:8080
+            - --web
+            - --kubernetes
+            - --configfile=/config/traefik.toml
