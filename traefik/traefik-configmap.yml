@@ -15,5 +15,5 @@ data:
           KeyFile = "/ssl/ca-key.pem"
 kind: ConfigMap
 metadata: 
-  name: traefik-conf
+  name: busybox-config
   namespace: kube-system 
