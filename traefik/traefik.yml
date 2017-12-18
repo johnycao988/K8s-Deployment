@@ -18,6 +18,8 @@ roleRef:
   name: cluster-admin
   apiGroup: rbac.authorization.k8s.io
 
+---
+
 kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
