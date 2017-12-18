@@ -6,22 +6,17 @@ metadata:
   namespace: test
 spec:
   rules:
-  - host: my.test.local
-    http:
-      paths:
-        - path: /test1
-          backend:
-            serviceName: "test1"
-            servicePort: 3000
-        - path: /test2
-          backend:
-            serviceName: "test2"
-            servicePort: 3000          
-
   - host: test1.test.local
     http:
       paths:
         - backend:
             serviceName: "test1"
+            servicePort: 3000
+
+  - host: test2.test.local
+    http:
+      paths:
+        - backend:
+            serviceName: "test2"
             servicePort: 3000
             
