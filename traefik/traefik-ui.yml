@@ -16,6 +16,8 @@ metadata:
   name: traefik-web-ui
   namespace: kube-system
 spec:
+  tls:
+  - secretName: traefik-tls-secret
   rules:
   - host: traefik.ui.local
     http:
