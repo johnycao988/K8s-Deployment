@@ -6,7 +6,7 @@ metadata:
   namespace: test
 spec:
   rules:
-  - host: my.test
+  - host: my.test.local
     http:
       paths:
         - path: /test1
