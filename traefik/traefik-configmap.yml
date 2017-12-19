@@ -9,5 +9,5 @@ data:
   traefik.toml: "defaultEntryPoints = [\"http\",\"https\"]\r\n[entryPoints]\r\n  [entryPoints.http]\r\n
     \ address = \":80\"\r\n    [entryPoints.http.redirect]\r\n      entryPoint = \"https\"\r\n
     \ [entryPoints.https]\r\n  address = \":443\"\r\n    [entryPoints.https.tls]\r\n
-    \     `entryPoints`.`https`.`tls`.`certificates`\r\n      CertFile = \"/config/tls.crt\"\r\n
+    \     'entryPoints'.'https'.'tls'.'certificates'\r\n      CertFile = \"/config/tls.crt\"\r\n
     \     KeyFile = \"/config/tls.key\""
