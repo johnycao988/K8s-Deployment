@@ -86,14 +86,14 @@ metadata:
   namespace: test
 spec:
   rules:
-  - host: test1.test.local
+  - host: test1.cs.cloud.com
     http:
       paths:
         - backend:
             serviceName: "test1"
             servicePort: 3000
 
-  - host: test2.test.local
+  - host: test2.cs.cloud.com
     http:
       paths:
         - backend:
