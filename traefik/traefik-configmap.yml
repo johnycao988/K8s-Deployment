@@ -17,5 +17,5 @@ data:
           KeyFile = "/config/tls.key"
 kind: ConfigMap
 metadata: 
-  name: busybox-config
+  name: traefik-conf
   namespace: kube-system 
