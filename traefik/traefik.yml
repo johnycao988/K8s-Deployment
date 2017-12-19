@@ -44,7 +44,7 @@ spec:
       volumes:
         - name: config
           configMap:
-            name: traefik-conf
+            name: traefik-configmap
       containers:
         - image: traefik
           name: traefik-ingress-lb
