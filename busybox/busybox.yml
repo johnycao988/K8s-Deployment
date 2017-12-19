@@ -7,7 +7,7 @@ spec:
   volumes:
     - name: config
       configMap:
-        name: busybox-config
+        name: busybox-configmap
   containers:
   - image: busybox
     command:
