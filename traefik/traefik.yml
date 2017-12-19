@@ -42,9 +42,6 @@ spec:
       terminationGracePeriodSeconds: 60
       hostNetwork: true
       volumes:
-        - name: ssl
-          secret:
-            secretName: traefik-tls-secret
         - name: config
           configMap:
             name: traefik-conf
@@ -52,8 +49,6 @@ spec:
         - image: traefik
           name: traefik-ingress-lb
           volumeMounts:
-            - mountPath: "/ssl"
-              name: "ssl"
             - mountPath: "/config"
               name: "config"
           resources:
