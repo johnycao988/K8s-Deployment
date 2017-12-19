@@ -66,4 +66,4 @@ spec:
             - --web.address=:8080
             - --web
             - --kubernetes
-            - --configfile=/config/traefik.toml
+#            - --configfile=/config/traefik.toml

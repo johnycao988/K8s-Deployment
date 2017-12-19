@@ -7,6 +7,6 @@ defaultEntryPoints = ["http","https"]
   [entryPoints.https]
   address = ":443"
     [entryPoints.https.tls]
-      `entryPoints`.`https`.`tls`.`certificates`
-      CertFile = "/config/tls.crt"
-      KeyFile = "/config/tls.key"
+      [[entryPoints.https.tls.certificates]]
+        CertFile = "/config/tls.crt"
+        KeyFile = "/config/tls.key"
