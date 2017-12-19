@@ -18,4 +18,4 @@ data:
 kind: ConfigMap
 metadata: 
   name: traefik-conf
-  namespace: kube-system 
+  namespace: default
