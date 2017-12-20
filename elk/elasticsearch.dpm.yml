@@ -40,7 +40,6 @@ spec:
         name: elasticsearch       
         ports:
         - containerPort: 9200 
-        - containerPort: 9300 
         volumeMounts:
         - mountPath: /usr/share/elasticsearch/data
           name: els-data
@@ -51,4 +50,22 @@ spec:
 
       nodeSelector:
         nodeName: caocentos7  
-        
+
+
+---
+# Ingress 文件如下
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: elasticsearch
+  namespace: elk
+spec:
+  rules:
+  - host: els.cs.cloud.com
+    http:
+      paths:
+        - backend:
+            serviceName: "elasticsearch"
+            servicePort: 9200
+
+  

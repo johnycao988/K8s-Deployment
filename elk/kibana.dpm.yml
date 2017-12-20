@@ -42,4 +42,19 @@ spec:
         - containerPort: 5601            
       nodeSelector:
         nodeName: hsbcjenkins  
-        
+
+---
+# Ingress 文件如下
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kibana
+  namespace: elk
+spec:
+  rules:
+  - host: kibana.cs.cloud.com
+    http:
+      paths:
+        - backend:
+            serviceName: "kibana"
+            servicePort: 5601        
