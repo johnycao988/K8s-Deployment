@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1beta2 # for versions before 1.8.0 use apps/v1beta1
+kind: Deployment
+metadata:
+  name: logstash
+  namespace: elk 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logstash
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      name: logstash
+      labels:
+        app: logstash
+    spec:
+      hostNetwork: false
+      containers:
+      - image: 10.39.101.226:5000/logstash 
+        volumeMounts:
+          - mountPath: /config-dir/logstash.conf
+            name: logstash-conf
+      volumes:
+        - name: logstash-conf
+          hostPath:
+            path: /K8s-Deployment/elk/logstash.conf
+      nodeSelector:
+        nodeName: hsbcjenkins  
+
+     
