@@ -20,6 +20,7 @@ spec:
       hostNetwork: false
       containers:
       - image: 10.39.101.226:5000/logstash 
+        name: logstash       
         volumeMounts:
           - mountPath: /config-dir/logstash.conf
             name: logstash-conf
