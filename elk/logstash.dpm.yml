@@ -20,7 +20,9 @@ spec:
       hostNetwork: false
       containers:
       - image: 10.39.101.226:5000/logstash 
-        name: logstash       
+        name: logstash
+        ports:
+        - containerPort: 9600             
         volumeMounts:
           - mountPath: /config-dir/logstash.conf
             name: logstash-conf
@@ -30,5 +32,38 @@ spec:
             path: /K8s-Deployment/elk/logstash.conf
       nodeSelector:
         nodeName: caocentos7  
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: logstash
+  namespace: elk
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 9600
+    targetPort: 9600
+ 
+  selector:
+    app: logstash
+    
+---
+ 
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: logstash
+  namespace: elk
+spec:
+  rules:
+  - host: logstash.cs.cloud.com
+    http:
+      paths:
+        - backend:
+            serviceName: "logstash"
+            servicePort: 9600        
+        
 
      
