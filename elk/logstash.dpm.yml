@@ -22,14 +22,15 @@ spec:
       - image: 10.39.101.226:5000/logstash 
         name: logstash
         ports:
-        - containerPort: 9600             
+        - containerPort: 9600
+        command: ["-f", "/config-dir/logstash.conf"]             
         volumeMounts:
-          - mountPath: /config-dir/logstash.conf
+          - mountPath: /config-dir
             name: logstash-conf
       volumes:
         - name: logstash-conf
           hostPath:
-            path: /K8s-Deployment/elk/logstash.conf
+            path: /K8s-Deployment/elk
       nodeSelector:
         nodeName: caocentos7  
 
