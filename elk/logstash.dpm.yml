@@ -29,10 +29,17 @@ spec:
         volumeMounts:
           - mountPath: /config-dir
             name: logstash-conf
+          - mountPath: /logstash-logs/events.log
+            name: logstash-logs
+            
       volumes:
         - name: logstash-conf
           hostPath:
             path: /K8s-Deployment/elk
+        - name: logstash-logs
+          hostPath:
+            path: /run/docker/libcontainerd/containerd/events.log
+            
       nodeSelector:
         nodeName: caocentos7  
 
