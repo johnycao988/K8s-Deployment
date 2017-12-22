@@ -23,7 +23,9 @@ spec:
         name: logstash
         ports:
         - containerPort: 9600
-        command: ["-f", "/config-dir/logstash.conf"]             
+        args:
+          - "-f"
+          - "/config-dir/logstash.conf"             
         volumeMounts:
           - mountPath: /config-dir
             name: logstash-conf
