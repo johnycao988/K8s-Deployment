@@ -22,6 +22,10 @@ spec:
         - name: config
           configMap:
             name: filebeat-configmap
+        - name: logs
+          hostPath:
+            path: "/run/docker/libcontainerd/containerd/events.log"
+            
       containers:
       - image: prima/filebeat 
         name: filebeat
@@ -29,6 +33,8 @@ spec:
           - mountPath: "/filebeat.yml"
             name: "config"
             subPath: "filebeat.conf.yml"
-        
+          - mountPath: "/logs/event.log"
+            name: "logs" 
+          
 
      

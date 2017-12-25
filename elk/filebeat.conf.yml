@@ -5,8 +5,8 @@ filebeat:
       input_type: log
       document_type: tomcat-log
       fields:
-        level: debug
-        review: 1
+        _type: test
+        _index: filebeat
  
   registry_file: /etc/registry/mark
       
