@@ -26,9 +26,9 @@ spec:
       - image: prima/filebeat 
         name: filebeat
         volumeMounts:
-          - mountPath: "/config"
+          - mountPath: "/filebeat.yml"
             name: "config"
-        command: [ "/bin/sh", "-c", "cp -f /config/filebeat.conf.yml /filebeat.yml" ]
+            subPath: "filebeat.conf.yml"
         
 
      
