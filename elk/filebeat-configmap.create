@@ -1,5 +1,5 @@
 #!/bin/sh
-## delete
+## delete filebeat configmap
 kubectl delete configmap filebeat-configmap -n elk
 ## Create  
 kubectl create configmap filebeat-configmap --namespace=elk --from-file=./filebeat.conf.yml
