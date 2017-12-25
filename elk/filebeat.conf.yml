@@ -15,11 +15,14 @@ filebeat:
   registry_file: /etc/registry/mark
       
 #-------------------------- Elasticsearch output ------------------------------
-#output.elasticsearch:
-  # Array of hosts to connect to.
- # hosts: ["http://elasticsearch:9200"]
+output:
+#  elasticsearch:
+#    hosts: ["http://elasticsearch:9200"]
 
   # Optional protocol and basic auth credentials.
   #protocol: "https"
   #username: "elastic"
   #password: "changeme"
+
+  console:
+    pretty: true
