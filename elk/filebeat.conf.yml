@@ -1,17 +1,13 @@
 filebeat:
   prospectors:
     - paths:
-        - "/data/logs/catalina.*.out"
+        - "/logs/events.log"
       input_type: filebeat-log
       document_type: tomcat-log
       fields:
         level: debug
         review: 1
-    - paths:
-        - "/data/logs/nginx*/logs/*.log"
-      input_type: filebeat-log
-      document_type: nginx-log
-    
+ 
   registry_file: /etc/registry/mark
       
 #-------------------------- Elasticsearch output ------------------------------
