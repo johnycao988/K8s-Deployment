@@ -12,13 +12,12 @@ filebeat:
       
 #-------------------------- Elasticsearch output ------------------------------
 output:
-#  elasticsearch:
-#    hosts: ["http://elasticsearch:9200"]
-
+  elasticsearch:
+    hosts: ["http://elasticsearch:9200"]
   # Optional protocol and basic auth credentials.
   #protocol: "https"
   #username: "elastic"
   #password: "changeme"
 
-  console:
-    pretty: true
+#  console:
+ #   pretty: true
