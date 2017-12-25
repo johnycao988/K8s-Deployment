@@ -18,17 +18,17 @@ spec:
         app: filebeat
     spec:
       hostNetwork: false
+      volumes:
+        - name: config
+          configMap:
+            name: filebeat-configmap
       containers:
       - image: prima/filebeat 
         name: filebeat
         volumeMounts:
-          - mountPath: "/filebeat.yml"
-            name: "filebeat-conf-file"
-      volumes:
-        - name: "filebeat-conf-file" 
-          hostPath:
-            path: "/K8s-Deployment/elk/filebeat.conf.yml"  
-    
+          - mountPath: "/config"
+            name: "config"
+        command: [ "/bin/sh", "-c", "cp -f /config/filebeat.conf.yml /filebeat.yml" ]
         
 
      
