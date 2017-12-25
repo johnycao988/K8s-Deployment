@@ -1,10 +1,19 @@
-filebeat.prospectors:
-  - type: log
-    paths:
-      - /var/log/*.log
-    fields:
-      level: debug
-      review: 1
+filebeat:
+  prospectors:
+    - paths:
+        - "/data/logs/catalina.*.out"
+      input_type: filebeat-log
+      document_type: tomcat-log
+      fields:
+        level: debug
+        review: 1
+    - paths:
+        - "/data/logs/nginx*/logs/*.log"
+      input_type: filebeat-log
+      document_type: nginx-log
+    
+  registry_file: /etc/registry/mark
+      
 #-------------------------- Elasticsearch output ------------------------------
 output.elasticsearch:
   # Array of hosts to connect to.
@@ -14,4 +23,3 @@ output.elasticsearch:
   #protocol: "https"
   #username: "elastic"
   #password: "changeme"
-
