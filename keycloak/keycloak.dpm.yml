@@ -39,8 +39,10 @@ spec:
         ports:
         - containerPort: 8080
         env:
-          KEYCLOAK_USER: admin
-          KEYCLOAK_PASSWORD: admin 
+          - name: KEYCLOAK_USER
+            value:  admin
+          - name: KEYCLOAK_PASSWORD
+            value: admin 
       nodeSelector:
         nodeName: caocentos7  
       
