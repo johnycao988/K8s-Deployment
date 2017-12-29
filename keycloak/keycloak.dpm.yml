@@ -38,7 +38,9 @@ spec:
         name: keycloak
         ports:
         - containerPort: 8080 
- 
+      nodeSelector:
+        nodeName: caocentos7  
+      
 ---
 # Ingress 文件如下
 apiVersion: extensions/v1beta1
