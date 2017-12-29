@@ -37,7 +37,10 @@ spec:
       - image: "10.39.101.226:5000/jboss/keycloak"
         name: keycloak
         ports:
-        - containerPort: 8080 
+        - containerPort: 8080
+        env:
+          KEYCLOAK_USER: admin
+          KEYCLOAK_PASSWORD: admin 
       nodeSelector:
         nodeName: caocentos7  
       
